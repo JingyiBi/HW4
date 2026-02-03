@@ -1,8 +1,3 @@
 # HW4
 ## Devlog
-Write your Devlog here!
-
-## Open-Source Assets
-If you added any other assets, list them here!
-- [Brackey's Platformer Bundle](https://brackeysgames.itch.io/brackeys-platformer-bundle) - sound effects
-- [2D pixel art seagull sprites](https://elthen.itch.io/2d-pixel-art-seagull-sprites) - seagull sprites
+In this project, the MVC (Model-View-Controller) pattern is utilized to decouple game logic from visual representation, primarily through the separation of the Controller and View layers. The PlayerController class serves as the Controller, handling input and physics-based interactions like rb.velocity = Vector2.up * flapStrength and detecting game state changes through OnCollisionEnter2D. Conversely, the View is represented by classes like ScoreManager, which handles the visual feedback of the score, and various AudioSource components (e.g., flapSound, collisionSound) that provide auditory feedback. These layers are decoupled using a Singleton pattern and event-like triggers: the PlayerController does not need a direct reference to the UI objects; instead, it calls ScoreManager.Instance.AddPoint(). This ensures that the Controller simply signals that an event occurred—such as passing a ScoreSlot—while the View (the Singleton instance) independently manages how that data is displayed or updated without the Player code needing to know the details of the UI implementation.

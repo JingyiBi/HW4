@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - ScoreSlot
+  - Obstacle
   layers:
   - Default
   - TransparentFX
